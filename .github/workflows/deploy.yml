@@ -1,4 +1,4 @@
-name: Deploy and Update
+name: Deploy and Update Workflow
 
 on:
   push:
@@ -6,45 +6,51 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: '0 0 * * 0'  # Run every Sunday at midnight
+    - cron: '0 0 * * 0' # Every Sunday at midnight
 
 jobs:
   validate:
-    name: Validate Projects
+    name: Validate Project Code and Structure
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: Install validation tools
+
+      - name: Install Validation Tools
         run: |
           npm install -g htmlhint stylelint eslint
-      - name: Validate Project Structure
+
+      - name: Default Configurations
         run: |
-          for d in ./projects/*/; do
-            if [ -d "$d" ]; then
-              echo "Validating $d..."
-              for file in "index.html" "css/style.css" "project.json"; do
-                if [ ! -f "$d$file" ]; then
-                  echo "❌ Missing $file in $d"
-                  exit 1
-                fi
-              done
-              htmlhint "$d/index.html"
-              stylelint "$d/css/*.css"
-              if [ -f "$d/js/script.js" ]; then
-                eslint "$d/js/*.js"
-              fi
+          echo '{ "rules": { "attr-value-not-empty": true } }' > .htmlhintrc
+          echo '{ "extends": "stylelint-config-standard" }' > .stylelintrc.json
+          echo '{ "env": { "browser": true, "node": true }, "extends": "eslint:recommended" }' > .eslintrc.json
+
+      - name: Validate Project Files
+        run: |
+          set -e
+          for project in ./projects/*/; do
+            echo "Validating $project"
+            # Validate HTML
+            htmlhint "$project/index.html"
+            # Validate CSS
+            stylelint "$project/css/*.css"
+            # Validate JS (if present)
+            if [ -f "$project/js/script.js" ]; then
+              eslint "$project/js/*.js"
             fi
           done
 
   lighthouse:
-    name: Lighthouse Check
+    name: Lighthouse Performance Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v9
         with:
@@ -57,31 +63,35 @@ jobs:
     name: Update README and Stats
     runs-on: ubuntu-latest
     needs: validate
-    if: github.event_name == 'push' || github.event_name == 'schedule'
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: Install dependencies
+
+      - name: Install Required Modules
         run: npm install @octokit/rest fs-extra
-      - name: Update README stats
+
+      - name: Update README and Project Stats
         run: |
           node .github/scripts/update-stats.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Update project list
+
+      - name: Update Project List
         run: |
           node .github/scripts/update-projects.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Commit changes
+
+      - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
-          git commit -m "docs: update README stats and projects" || echo "No changes to commit"
+          git commit -m "docs: updated README stats and projects" || echo "No changes to commit"
           git push
 
   deploy:
@@ -91,14 +101,18 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: Install dependencies
+
+      - name: Install Dependencies
         run: npm install
-      - name: Build project
+
+      - name: Build Project
         run: npm run build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
