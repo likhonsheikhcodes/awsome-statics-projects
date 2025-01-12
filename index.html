@@ -42,9 +42,12 @@
     }
     </script>
 
-    <!-- CDN Resources -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Styles -->
+    <link href="/styles.css" rel="stylesheet">
+
+    <!-- Alpine.js -->
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300" x-data="projectsApp()">
@@ -96,14 +99,14 @@
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <template x-for="project in filteredProjects" :key="project.name">
+                <template x-for="(project, index) in filteredProjects" :key="index">
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition duration-300 transform hover:scale-105">
                         <img :src="project.thumbnail_url" :alt="project.name" class="w-full h-48 object-cover" loading="lazy">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold mb-2" x-text="project.name"></h3>
                             <p class="text-gray-600 dark:text-gray-400 mb-4" x-text="project.description"></p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <template x-for="tech in project.technologies" :key="tech">
+                                <template x-for="(tech, techIndex) in project.technologies" :key="techIndex">
                                     <span class="px-2 py-1 text-xs font-medium text-blue-800 dark:text-blue-200 bg-blue-100 dark:bg-blue-900 rounded-full" x-text="tech"></span>
                                 </template>
                             </div>
