@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Modern Landing Page",
+    "description": "A sleek and responsive landing page template with smooth scrolling and animated sections.",
+    "technologies": ["HTML", "CSS", "JavaScript", "GSAP"],
+    "thumbnail": "/projects/modern-landing-page/thumbnail.png",
+    "demo": "/projects/modern-landing-page/index.html",
+    "github": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/modern-landing-page"
+  },
+  {
+    "name": "Interactive Card",
+    "description": "An interactive card component with flip animation and customizable content.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "thumbnail": "/projects/interactive-card/thumbnail.png",
+    "demo": "/projects/interactive-card/index.html",
+    "github": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/interactive-card"
+  },
+  {
+    "name": "Responsive Portfolio",
+    "description": "A fully responsive portfolio website template with dark mode support.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    "thumbnail": "/projects/responsive-portfolio/thumbnail.png",
+    "demo": "/projects/responsive-portfolio/index.html",
+    "github": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/responsive-portfolio"
+  }
+]
+
