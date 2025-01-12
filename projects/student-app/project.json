@@ -1,1 +1,8 @@
-
+{
+  "name": "Calculator",
+  "description": "A simple and responsive calculator built with HTML, CSS, and JavaScript.",
+  "technologies": ["HTML", "CSS", "JavaScript"],
+  "category": "UI Component",
+  "author": "Ador",
+  "thumbnail": "assets/images/IMG_5213.jpeg"
+}
