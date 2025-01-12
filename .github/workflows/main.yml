@@ -1,0 +1,36 @@
+name: Show Repo Structure
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  print_repo_tree:
+    name: Print Repository Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Install Tree command
+      - name: Install Tree Command
+        run: sudo apt-get install -y tree
+
+      # Step 3: Print Repository Structure
+      - name: Show Repository Tree
+        run: |
+          echo "Repository Structure:"
+          tree -a -I '.git|node_modules|dist|.github' # Exclude unnecessary directories for clarity
+
+      # Step 4: Save Repository Tree to Artifact
+      - name: Save Tree Structure to Artifact
+        run: tree -a -I '.git|node_modules|dist|.github' > repo-tree.txt
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: repo-tree
+          path: repo-tree.txt
