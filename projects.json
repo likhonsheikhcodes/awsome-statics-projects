@@ -3,25 +3,61 @@
     "name": "Modern Landing Page",
     "description": "A sleek and responsive landing page template with smooth scrolling and animated sections.",
     "technologies": ["HTML", "CSS", "JavaScript", "GSAP"],
+    "category": "Landing Page",
+    "author": "John Doe",
+    "github": "https://github.com/johndoe",
     "thumbnail": "/projects/modern-landing-page/thumbnail.png",
     "demo": "/projects/modern-landing-page/index.html",
-    "github": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/modern-landing-page"
+    "github_url": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/modern-landing-page",
+    "stars": 42
   },
   {
     "name": "Interactive Card",
     "description": "An interactive card component with flip animation and customizable content.",
     "technologies": ["HTML", "CSS", "JavaScript"],
+    "category": "UI Component",
+    "author": "Jane Smith",
+    "github": "https://github.com/janesmith",
     "thumbnail": "/projects/interactive-card/thumbnail.png",
     "demo": "/projects/interactive-card/index.html",
-    "github": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/interactive-card"
+    "github_url": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/interactive-card",
+    "stars": 38
   },
   {
     "name": "Responsive Portfolio",
     "description": "A fully responsive portfolio website template with dark mode support.",
     "technologies": ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+    "category": "Portfolio",
+    "author": "Alex Johnson",
+    "github": "https://github.com/alexjohnson",
     "thumbnail": "/projects/responsive-portfolio/thumbnail.png",
     "demo": "/projects/responsive-portfolio/index.html",
-    "github": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/responsive-portfolio"
+    "github_url": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/responsive-portfolio",
+    "stars": 55
+  },
+  {
+    "name": "Weather Dashboard",
+    "description": "A dynamic weather dashboard with real-time updates and location-based forecasts.",
+    "technologies": ["HTML", "CSS", "JavaScript", "API Integration"],
+    "category": "Web Application",
+    "author": "Emily Brown",
+    "github": "https://github.com/emilybrown",
+    "thumbnail": "/projects/weather-dashboard/thumbnail.png",
+    "demo": "/projects/weather-dashboard/index.html",
+    "github_url": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/weather-dashboard",
+    "stars": 67
+  },
+  {
+    "name": "Animated SVG Icons",
+    "description": "A collection of animated SVG icons for modern web interfaces.",
+    "technologies": ["HTML", "CSS", "SVG", "JavaScript"],
+    "category": "UI Component",
+    "author": "Michael Lee",
+    "github": "https://github.com/michaellee",
+    "thumbnail": "/projects/animated-svg-icons/thumbnail.png",
+    "demo": "/projects/animated-svg-icons/index.html",
+    "github_url": "https://github.com/likhonsheikhcodes/awsome-statics-projects/tree/main/projects/animated-svg-icons",
+    "stars": 89
   }
 ]
 
