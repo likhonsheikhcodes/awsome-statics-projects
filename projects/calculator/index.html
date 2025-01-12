@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="A simple, responsive, and user-friendly calculator built with HTML, CSS, and JavaScript. Perfect for everyday calculations on your mobile or desktop.">
+  
+  <!-- Meta Keywords for SEO -->
+  <meta name="keywords" content="calculator, responsive calculator, HTML calculator, CSS calculator, JavaScript calculator, free online calculator">
+  
+  <!-- Meta Author -->
+  <meta name="author" content="Your Name">
+  
+  <!-- Open Graph Tags for Social Media -->
+  <meta property="og:title" content="Calculator - A Simple and Responsive Calculator">
+  <meta property="og:description" content="A simple, responsive, and user-friendly calculator built with HTML, CSS, and JavaScript. Perfect for everyday calculations.">
+  <meta property="og:image" content="assets/images/thumbnail.png">
+  <meta property="og:url" content="https://yourwebsite.com/calculator">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Tags for Better Sharing on Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculator - A Simple and Responsive Calculator">
+  <meta name="twitter:description" content="A simple, responsive, and user-friendly calculator built with HTML, CSS, and JavaScript.">
+  <meta name="twitter:image" content="assets/images/thumbnail.png">
+  
+  <title>Calculator</title>
+  
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon for browser tab -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div class="calculator">
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('9')">9</button>
+      <button onclick="appendToDisplay('/')">/</button>
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="appendToDisplay('*')">*</button>
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="appendToDisplay('-')">-</button>
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="appendToDisplay('.')">.</button>
+      <button onclick="calculateResult()">=</button>
+      <button onclick="appendToDisplay('+')">+</button>
+    </div>
+  </div>
+
+  <!-- Link to external JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
