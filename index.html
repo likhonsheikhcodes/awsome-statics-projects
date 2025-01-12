@@ -189,7 +189,7 @@
 
             async fetchProjectDetails(projectName) {
                 try {
-                    const response = await fetch(`https://api.github.com/repos/likhonsheikhcodes/awsome-statics-projects/contents/projects/${projectName}/project.json`);
+                    const response = await fetch(`https://api.github.com/repos/likhonsheikhcodes/awsome-statics-projects/contents/projects/${projectName}/projects.json`);
                     const data = await response.json();
                     return data;
                 } catch (error) {
