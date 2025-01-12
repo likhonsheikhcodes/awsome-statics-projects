@@ -11,7 +11,7 @@
 
 [View Demo](https://likhonsheikhcodes.github.io/awsome-statics-projects/) · [Report Bug](https://github.com/likhonsheikhcodes/awsome-statics-projects/issues) · [Request Feature](https://github.com/likhonsheikhcodes/awsome-statics-projects/issues)
 
-![Project Banner](banner.png)
+![Project Banner](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F77d6e2c7-2c7b-4250-b23e-ae464112cb91_744x219.png)
 
 </div>
 
