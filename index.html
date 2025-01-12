@@ -1,168 +1,194 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Awesome Static Projects | Curated Collection of Modern Web Development Showcases</title>
     
-    <!-- Primary Meta Tags -->
-    <title>⚡ Awesome Static Projects | Modern Web Development Showcase</title>
-    <meta name="title" content="Awesome Static Projects | Modern Frontend Development Showcase">
-    <meta name="description" content="Discover cutting-edge static web projects built with modern HTML, CSS, and JavaScript. Join our community of developers, learn best practices, and showcase your work.">
-    <meta name="keywords" content="static websites, web development, HTML5, CSS3, JavaScript, TailwindCSS, frontend development, web design, portfolio, showcase, developer community">
-    <meta name="author" content="Awesome Static Projects Community">
-    <meta name="theme-color" content="#3B82F6">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore a curated collection of cutting-edge static web projects built with HTML, CSS, and JavaScript. Discover inspiring designs, learn modern techniques, and contribute your own projects to our growing community of developers.">
+    <meta name="keywords" content="static websites, web development, HTML, CSS, JavaScript, portfolio, showcase, modern web, responsive design">
+    <meta name="author" content="Awesome Static Projects Team">
     <link rel="canonical" href="https://awsome-statics-projects.vercel.app/">
-
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://awsome-statics-projects.vercel.app/">
-    <meta property="og:title" content="Awesome Static Projects | Modern Frontend Showcase">
-    <meta property="og:description" content="Discover cutting-edge static web projects. Join our developer community, learn modern techniques, and showcase your work.">
+    <meta property="og:title" content="Awesome Static Projects | Modern Web Development Showcase">
+    <meta property="og:description" content="Explore cutting-edge static web projects. Learn, get inspired, and contribute to our developer community.">
     <meta property="og:image" content="https://awsome-statics-projects.vercel.app/og-image.jpg">
-    <meta property="og:site_name" content="Awesome Static Projects">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@awesome_static">
-    <meta name="twitter:title" content="Awesome Static Projects | Modern Frontend Showcase">
-    <meta name="twitter:description" content="Discover cutting-edge static web projects. Join our developer community, learn modern techniques, and showcase your work.">
+    <meta name="twitter:url" content="https://awsome-statics-projects.vercel.app/">
+    <meta name="twitter:title" content="Awesome Static Projects | Modern Web Development Showcase">
+    <meta name="twitter:description" content="Explore cutting-edge static web projects. Learn, get inspired, and contribute to our developer community.">
     <meta name="twitter:image" content="https://awsome-statics-projects.vercel.app/twitter-image.jpg">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/styles.css" as="style">
-    <link rel="preload" href="/main.js" as="script">
+    <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/css/critical.css" as="style">
+    <link rel="preload" href="/js/app.js" as="script">
+
+    <!-- Critical CSS -->
+    <style>
+        /* Inline critical CSS here */
+        @font-face {
+            font-family: 'Inter var';
+            font-weight: 100 900;
+            font-display: swap;
+            font-style: normal;
+            font-named-instance: 'Regular';
+            src: url("/fonts/inter-var-latin.woff2") format("woff2");
+        }
+        body {
+            font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
+      "@type": "WebSite",
       "name": "Awesome Static Projects",
       "url": "https://awsome-statics-projects.vercel.app/",
-      "applicationCategory": "DeveloperApplication",
-      "genre": "web development",
-      "description": "A curated collection of modern static web projects showcasing frontend development excellence.",
-      "operatingSystem": "Any",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "author": {
-        "@type": "Organization",
-        "name": "Awesome Static Projects Community",
-        "url": "https://github.com/likhonsheikhcodes"
+      "description": "A curated collection of modern static web projects for developers.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://awsome-statics-projects.vercel.app/#projects?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
     }
     </script>
-
-    <!-- Styles -->
-    <link href="/styles.css" rel="stylesheet">
-
-    <!-- Modern Loading Strategy -->
-    <link rel="modulepreload" href="/modules/core.js">
-    <link rel="modulepreload" href="/modules/search.js">
-    <link rel="modulepreload" href="/modules/theme.js">
-
-    <!-- Critical CSS Inline -->
-    <style>
-        .loader {
-            @apply fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900;
-            clip-path: circle(150% at 50% 50%);
-            transition: clip-path 0.7s ease-in-out;
-        }
-        .loader.hidden {
-            clip-path: circle(0% at 50% 50%);
-        }
-        .skeleton {
-            @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
-        }
-    </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased" 
-      x-data="{ darkMode: false, isLoading: true }" 
-      x-init="
-        setTimeout(() => isLoading = false, 800);
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            darkMode = true;
-            document.documentElement.classList.add('dark');
-        }
-      ">
+<body>
+    <a href="#main-content" class="visually-hidden">Skip to main content</a>
 
-    <!-- Page Loader -->
-    <div class="loader" x-show="isLoading" x-transition:leave.duration.700ms>
-        <svg class="animate-spin h-12 w-12 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-    </div>
-
-    <!-- Offline Detection -->
-    <div x-data="{ offline: !navigator.onLine }"
-         @offline.window="offline = true"
-         @online.window="offline = false"
-         x-show="offline"
-         class="fixed top-0 inset-x-0 z-50 bg-red-500 text-white p-4 text-center">
-        You are currently offline. Some features may be limited.
-    </div>
-
-    <!-- Main Content -->
-    <div x-show="!isLoading" x-transition:enter.duration.700ms>
-        <!-- Header content here -->
-        
-        <!-- Dynamic Project Grid -->
-        <div class="projects-grid" x-data="projectsGrid()">
-            <template x-for="project in filteredProjects" :key="project.id">
-                <!-- Project card template -->
-            </template>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="/" class="logo">Awesome Static Projects</a>
+                <ul class="nav-links">
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="https://github.com/likhonsheikhcodes/awsome-statics-projects" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="visually-hidden">Toggle dark mode</span>
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </nav>
         </div>
+    </header>
 
-        <!-- Infinite Scroll Observer -->
-        <div x-intersect="loadMoreProjects" class="h-10"></div>
+    <main id="main-content" class="site-main" role="main">
+        <section class="hero">
+            <div class="container">
+                <h1>Discover Amazing Static Web Projects</h1>
+                <p>Explore a curated collection of modern, responsive static websites built with HTML, CSS, and JavaScript.</p>
+                <a href="#projects" class="cta-button">Explore Projects</a>
+            </div>
+        </section>
 
-        <!-- Virtual Scroll Implementation -->
-        <div class="virtual-scroll-container" 
-             x-data="virtualScroll" 
-             x-init="initialize"
-             @scroll.window="updateVisibleItems">
-            <!-- Virtual scroll content -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="search-sort">
+                    <input type="text" id="search-projects" placeholder="Search projects..." aria-label="Search projects">
+                    <div class="sort-buttons">
+                        <button id="sort-name" aria-label="Sort by name">Name</button>
+                        <button id="sort-stars" aria-label="Sort by stars">Stars</button>
+                    </div>
+                </div>
+                <div id="projects-grid" class="projects-grid">
+                    <!-- Projects will be dynamically inserted here -->
+                </div>
+                <div id="loading-spinner" class="loading-spinner" aria-hidden="true">
+                    <div class="spinner"></div>
+                </div>
+                <div id="load-more" class="load-more">
+                    <button id="load-more-button">Load More</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Awesome Static Projects</h2>
+                <p>Awesome Static Projects is a curated collection of modern, responsive static websites built with HTML, CSS, and JavaScript. Our goal is to inspire developers, showcase best practices, and promote learning in the web development community.</p>
+                <a href="https://github.com/likhonsheikhcodes/awsome-statics-projects" class="github-link" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    Contribute on GitHub
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 2023 Awesome Static Projects. All rights reserved.</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </nav>
         </div>
+    </footer>
+
+    <div id="offline-notification" class="offline-notification" role="alert" aria-hidden="true">
+        You are currently offline. Some features may be unavailable.
     </div>
 
-    <!-- Scripts -->
-    <script type="module" src="/modules/core.js"></script>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </button>
+
+    <script type="module" src="/js/app.js"></script>
     <script>
-        // Fallback for browsers that don't support module
+        // Fallback for browsers that don't support ES modules
         (function() {
             if (!('noModule' in HTMLScriptElement.prototype)) {
-                const fallbackScript = document.createElement('script');
-                fallbackScript.src = '/fallback-bundle.js';
-                document.head.appendChild(fallbackScript);
+                var script = document.createElement('script');
+                script.src = '/js/app-legacy.js';
+                document.body.appendChild(script);
             }
         })();
     </script>
-
-    <!-- Service Worker Registration -->
     <script>
+        // Service Worker Registration
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => console.log('SW registered:', registration))
-                .catch(error => console.log('SW registration failed:', error));
-        }
-    </script>
-
-    <!-- Development Tools (removed in production) -->
-    <script>
-        if (process.env.NODE_ENV === 'development') {
-            // Development-specific code
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
         }
     </script>
 </body>
