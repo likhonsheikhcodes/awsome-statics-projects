@@ -1,0 +1,22 @@
+{
+  "name": "Awesome Static Projects",
+  "short_name": "Static Projects",
+  "description": "Explore a curated collection of modern, responsive static websites built with HTML, CSS, and JavaScript.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
